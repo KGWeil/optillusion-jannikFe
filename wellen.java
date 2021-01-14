@@ -6,8 +6,8 @@ import processing.core.PFont;
  * Klasse wellen.
  * Beschreibung: 
  *
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author (Jannik Feldmann) 
+ * @version (1.0.0)
  */
 public class wellen extends PApplet
 {       
