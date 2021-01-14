@@ -30,10 +30,7 @@ public class wellen extends PApplet
     public void setup()
     {
        background(255, 153, 0);
-       zeichneReihe(0, true,true);
-       zeichneReihe(54, false,true);
-       zeichneReihe(108, true,true);
-       zeichneReihe(162, false,false);
+      
     }
 
     /**
@@ -44,11 +41,15 @@ public class wellen extends PApplet
     @Override
     public void draw()
     {
-
+       zeichneReihe(0, true,true);
+       zeichneReihe(54, false,true);
+       zeichneReihe(108, true,true);
+       zeichneReihe(162, false,false);
+       noLoop();
     }
     public void zeichneReihe(int y, boolean links, boolean unterstrich){
         
-        int test[]  = {0,1,0,1,0,1,0,1};//da fällt mir noch nichts besseres ein :(
+        int test[]  = {0,1,0,1,0,1,0,1,0};//da fällt mir noch nichts besseres ein :(
         
     for(int k = 0;k<8;k++){
         zeichneQuadrat(50*k+50, y+50, test[k],links);
@@ -65,13 +66,13 @@ public class wellen extends PApplet
         rect(x,y,50,50);
         fill(255);
         if(links == true){
-        circle(x+5,y+5,5);
-        circle(x+5,y+45,5);
+        circle(x+10,y+10,10);
+        circle(x+10,y+40,10);
         }
         else{
         
-        circle(x+45,y+5,5);
-        circle(x+45,y+45,5);
+        circle(x+40,y+10,10);
+        circle(x+40,y+40,10);
         }
         }
         
@@ -81,12 +82,12 @@ public class wellen extends PApplet
         fill(1);
         if(links == true){
          
-        circle(x+5,y+5,5);
-        circle(x+5,y+45,5);
+        circle(x+10,y+10,10);
+        circle(x+10,y+40,10);
         }
         else{
-        circle(x+45,y+5,5);
-        circle(x+45,y+45,5);
+        circle(x+40,y+10,10);
+        circle(x+40,y+40,10);
         }
         }
     }
