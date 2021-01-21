@@ -19,6 +19,7 @@ public class wellen extends PApplet
     public void settings()
     {
         size(500,500);
+       
     }        
 
     /**
@@ -30,7 +31,7 @@ public class wellen extends PApplet
     public void setup()
     {
        background(255, 153, 0);
-      
+       noStroke();
     }
 
     /**
@@ -42,9 +43,9 @@ public class wellen extends PApplet
     public void draw()
     {
        zeichneReihe(0, true,true);
-       zeichneReihe(54, false,true);
-       zeichneReihe(108, true,true);
-       zeichneReihe(162, false,false);
+       zeichneReihe(53, false,true);
+       zeichneReihe(106, true,true);
+       zeichneReihe(159, false,false);
        noLoop();
     }
     public void zeichneReihe(int y, boolean links, boolean unterstrich){
@@ -54,7 +55,7 @@ public class wellen extends PApplet
     for(int k = 0;k<8;k++){
         zeichneQuadrat(50*k+50, y+50, test[k],links);
         fill(0,255,0);
-        if(unterstrich == true){rect(50,y+50+51,400,3);}
+        if(unterstrich == true){rect(50,y+50+50,400,3);}
         
     }
     }

@@ -18,7 +18,7 @@ public class wellen2 extends PApplet
     @Override
     public void settings()
     {
-        size(500,500);
+        size(700,700);
     }        
 
     /**
@@ -29,7 +29,8 @@ public class wellen2 extends PApplet
     @Override
     public void setup()
     {
-
+    background(255,255,255);
+    noStroke();
     }
 
     /**
@@ -40,9 +41,35 @@ public class wellen2 extends PApplet
     @Override
     public void draw()
     {
-
+        int modul = 0;
+        boolean farbe = false;
+        for(int k = 0; k<12;k++){
+        modul = k%2;
+        farbe = modul==1 ? true:false;
+        drawCube(50+50*k,farbe);
+        }
+        
+        noLoop();
     }
-
+    public void drawCube(int y, boolean firstInfill){
+    int modulo = 0;
+    boolean Infill = false;
+    
+    for(int i = 0; i<12;i++){
+    modulo = i % 2;
+    if(firstInfill == true){ modulo = modulo == 0 ? 1:0;}
+    Infill = modulo == 1 ? true:false;
+    if(Infill == true){fill(0,255,0);}
+    else{fill(255,255,255);}
+    square(50+i*50, y, 50);//outsideCube
+    
+    
+    if(Infill == false){fill(0,255,0);}
+    else{fill(255,255,255);}
+    square(55+i*50, y+5, 40);
+    }
+    
+    }
     /**
      * Mit der main()-Methode wird das Programm gestartet.
      *
